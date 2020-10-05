@@ -1,5 +1,10 @@
 //Problem : https://www.spoj.com/problems/JNEXT/
 //Solution using stacks.
+/*Solution Strategy :
+The number which is non ascending order is always the highest. If that is an input, just output -1;
+Else, find the first break from the right side for the non ascending. 
+Then, just start putting all the numbers on to stack till you find something which is smaller than breaking number.
+Finally, just pop the stack and insert in to the string.*/
 //Complexity : O(N)
 
 #include <iostream>
