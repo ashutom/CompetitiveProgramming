@@ -32,7 +32,7 @@ void getNSL(const vector<unsigned long long>& A, vector<int>& nsl){
 }
 void getNSR(vector<unsigned long long> A, vector<int>& nsr){
     stack<int> S;A.push_back(0);
-    for(int i=A.size();i>=0;i--){
+    for(int i=A.size()-1;i>=0;i--){
         if(S.empty()) { S.push(i); nsr.push_back(-1); }
         else if(A[i]>A[S.top()]) { nsr.push_back(S.top());S.push(i); }
         else if(A[i]<=A[S.top()]) {
