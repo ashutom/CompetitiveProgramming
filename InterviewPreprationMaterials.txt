@@ -1,5 +1,7 @@
 Prepration Material Interviews
 
+1) https://leetcode.com/discuss/interview-experience/974067/nda-microsoft-amazon-senior-software-engineer-embedded-software-india-offers
+
 Microsoft Interview:
 
 Phone: Discussion with HM about Work experience
