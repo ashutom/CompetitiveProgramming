@@ -1,0 +1,48 @@
+Prepration Material Interviews
+
+Microsoft Interview:
+
+Phone: Discussion with HM about Work experience
+Round1: Embedded software, OS concepts, DS/ALGO coding problem. [LC medium]
+Round2: 2 DS/ALGO coding problems [LC medium]
+Round3: Behavioral, Embedded C/OOPS/OS/Linux Kernel concepts
+Round4: Behavioral, DS/ALGO coding [LC medium]
+Round5: Behavioral, System Design, System wide debug/bring-up
+Amazon Interview:
+
+Round1: LP, DS/ALGO coding problem. [LC medium]
+Round2: LP, 2 DS/ALGO coding problem [LC medium]
+Round3: All LP, Domain experience
+Round4: Embedded Design
+Round5: LP, DS/ALGO coding problem [LC medium]
+Round6: LP, and work experience, embedded systems
+List down topics which embedded software guys should focus upon apart from DS-Algorithms:
+
+Operating systems/Computer Architecture:
+
+Process and Threads
+Process Scheduling
+Synchronization mechanisms (mutex/spinlock/semaphore)
+Memory Management (Virtual memory/paging/translation)
+Producer and Consumer Problem
+Caching (cache coherency/cache line)
+Memory mapped IO/ IO Mapped IO
+Linux Kernel concepts:
+
+Buffer sharing: DMA Buf & ION
+Wait events/Wait queues
+ISR handling (Top half/Bottom half)
+Bottom Half - Tasklet/Workqueue/SoftIRQ
+Platform driver
+Driver probe (Module init, driver register, compatibility string)
+Device Tree (Device nodes and parsing)
+Clocks/Regulators/GPIO/Pinctrl
+IOMMU/MMU
+Timer Library
+IOCTL, notify dirent
+kmalloc/vmalloc
+kmap/mmap/ioremap
+sysfs/debugfs/procfs
+PS: I will be joining Microsoft.
+
+Thanks Leetcode Team and amazing Leetcode community!
