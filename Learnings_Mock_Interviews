@@ -1,0 +1,198 @@
+1: ==>  My code for the problem in which we I did not come up with cases <===========
+Code for this one :
+#include <iostream>
+#include <vector>
+#include <unordered_map>
+
+using namespace std;
+
+vector<int> getIndicesOfItemWeights( const vector<int>& arr, int limit)
+{
+  
+  arr.at(0)   
+  
+  if(arr.empty()) return {};
+  
+  unordered_map<int,int> hash;    // numToIndexCache
+  vector<int> res(2,-1);
+  for(int i=0;i<arr.size();i++){
+    auto it= hash.find(limit-arr[i]);
+    if(it !=hash.end()){
+       res[0]=i; res[1]=hash[limit-arr[i]];
+       hash[arr[i]]=i;
+       auto it2=hash.find(limit-arr[i]);
+        cout<<" it2->"<<it2->second<<endl;
+    }else{
+       hash.insert({arr[i],i});
+    }
+  }
+  if(res[0]==-1 || res[1]==-1) return {};
+  else return res;
+}
+
+int main() {
+  return 0;
+}
+
+ #if 0
+// int 
+// limt -> int 
+
+// -> constarints : sorted data in the array < dont't >
+
+// space :  ...//
+
+
+x,y lim  -> x=lim-y ;
+
+[4-0, 6-1]
+[8-4]
+[4, 6]   limit [8]
+
+[4, 1]
+
+[4  4  4 7]   [8]
+
+[2,1] [2,0] [1,0]
+
+4,1
+  7,2
+  
+  
+// lookup table -> all 
+// -> 
+//[4, 6, 10, 15, 16],  lim = 21 
+
+// 4,0 ; 6,1, ; 10,2 ;  21-4  => 
+
+  ==> time : On) 
+   ==>spac : O(n) ;
+ 
+#endif 
+
+
+
+
+
+2 ===>  How the other person did <===
+Sorting Intervals
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+struct Interval{
+  int start;
+  int end;
+};
+
+
+
+Interval getCommonInterval(Interval intervalOne, Interval intervalTwo) {
+    if(intervalOne.end < intervalTwo.satrt || intervalTwo.end < intervalOne.start) {
+      return {};
+    }
+    
+    return {max(intervalOne.start, intervalTwo.start), min(intervalOne.end, intervalTwo.end};
+}
+                                                                                                                                                       
+                                                           
+ bool isValidRange(Interval interval, int dur) {
+   return interval.start + dur <= interval.end;
+ }
+
+vector<int> meetingPlanner( const vector<vector<int>>& slotOne, const vector<vector<int>>& slotTwo, int dur) 
+{
+    if(dur <= 0 || slotOne.empty() || slotTwo.empty()) {
+      return {};
+    } 
+  
+    int pointerOne = 0, pointerTwo = 0;
+  
+    while(pointerOne < slotOne.size() && pointerTwo < slotTwo.size()) {
+      
+      Interval intervalOne = {slotOne.at(pointerOne).at(0), slotOne.at(pointerOne).at(1)};
+      Interval intervalTwo = {slotOne.at(pointerTwo).at(0), slotOne.at(pointerTwo).at(1)};
+      
+      Interval commonInterval = getCommonInterval(intervalOne, intervalTwo);
+      
+      if(commonInterval.empty()) {
+          if(intervalOne.end < intervalTwo.start) {
+            pointerOne++;
+          } else {
+            pointerTwo++;
+          }
+      } else {
+          if(isValidRange(commonInterval, dur)) {
+            return {commonInterval.start, commonInterval.start + dur};
+          }
+      }
+    }
+  
+    return {};
+}
+
+int main() {
+  return 0;
+}
+#if 0
+// test suites
+// dur = 0
+// [] [[10, 20]]  ==> []
+// [] [] => []
+
+[1, 4] [4, 6] [4, 4]
+
+// [10, 20] [40, 50]  => []
+// [10, 40] [30, 60] dur (12) => []
+// [10, 40 ] [30, 60] dur(7) => [40, 47]
+// [[10, 40] [50, 60]]  [[30,40] , [50, 57]]   dur(5)  ==> [30, 35]
+
+1. comparing intervals from sets
+2. get intersection if possible 
+     if yes(validate if dur is less than range) if yes (return ans)
+       if no (slide the pointer for min set);
+3. end condition (if any list exhaust)
+
+
+[[10, 50], [60, 120], [140, 210]]
+[[0, 15], [60, 70]]
+
+dur = 8
+  
+[10, 15], [60, 70]  
+
+[60, 68]
+
+
+requirement
+
+sorted on start
+disjoint
+
+(earliest slot)
+
+one of list empty
++ve
+return empty (no possibilities)
+  
+ //ogic for intersection
+  
+  [1, 4]  [5, 7]
+  
+  [1, 4] [3, 7]
+  [3, 7] ===> [3, 5]
+  
+  
+  Complexities
+  T(n) = O(m + n)
+  
+  S(n) = O(1)
+  
+  
+  
+  [1, 5] [3, 8]
+  [3, 5]
+  
+  
+  #endif 
